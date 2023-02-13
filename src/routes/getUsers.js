@@ -1,4 +1,4 @@
-const connection = require("../db");
+const connection = require("../src/db");
 
 const getUsersHelper = () => {
   return new Promise((resolve, reject) => {
