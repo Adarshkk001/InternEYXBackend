@@ -1,16 +1,16 @@
 const express = require("express");
 const app = express();
-
-const home = require("../routes/home");
-const registerUser = require("../routes/registerUser");
-const getUsers = require("../routes/getUsers");
-const userLogin = require("../routes/loginUser");
-const fetchUser = require("../Middleware/fetchUser");
-
-const validateUser = require("../Middleware/userValidator");
+const home = require("./routes/home");
+const registerUser = require("./routes/registerUser");
+const getUsers = require("./routes/getUsers");
+const userLogin = require("./routes/loginUser");
+const fetchUser = require("./Middleware/fetchUser");
 const connection = require("./db");
 
-const PORT = Process.env.PORT || 3500;
+const validateUser = require("./Middleware/userValidator");
+
+const PORT = process.env.PORT || 3500;
+console.log(PORT);
 
 app.use(express.json());
 app.use((req, res, next) => {
