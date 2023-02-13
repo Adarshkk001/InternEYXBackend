@@ -115,7 +115,7 @@ app.get("/SelectedColors", fetchUser.fetchUser, (req, res) => {
 });
 
 app.post("/updateColors", fetchUser.fetchUser, (req, res) => {
-  console.log(req.user.id, req.body.colors);
+  // console.log(req.user.id, req.body.colors);
   const id = req.user.id;
   const colors = req.body.colors;
   try {
