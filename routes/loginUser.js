@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const env = require("dotenv").config();
 
-const JWTSecretkey = env.parsed.JWT_SECRET_KEY;
+const JWTSecretkey = process.env.JWT_SECRET_KEY;
 const checkAuth = (user) => {
   return new Promise((resolve, reject) => {
     checkEmailExist(user.Email)
