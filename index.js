@@ -10,7 +10,6 @@ const connection = require("./db");
 const validateUser = require("./Middleware/userValidator");
 
 const PORT = process.env.PORT || 3500;
-console.log(PORT);
 
 app.use(express.json());
 app.use((req, res, next) => {
