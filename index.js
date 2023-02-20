@@ -2,13 +2,13 @@ const express = require("express");
 const app = express();
 
 const home = require("../routes/home");
-const registerUser = require("../routes/registerUser");
-const getUsers = require("../routes/getUsers");
-const userLogin = require("../routes/loginUser");
-const fetchUser = require("../Middleware/fetchUser");
+const registerUser = require("./routes/registerUser");
+const getUsers = require("./routes/getUsers");
+const userLogin = require("./routes/loginUser");
+const fetchUser = require("./Middleware/fetchUser");
 
-const validateUser = require("../Middleware/userValidator");
-const connection = require("../db");
+const validateUser = require("./Middleware/userValidator");
+const connection = require("./db");
 
 const PORT = Process.env.PORT || 3500;
 
