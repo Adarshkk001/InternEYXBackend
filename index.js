@@ -1,15 +1,16 @@
 const express = require("express");
 const app = express();
-const home = require("./routes/home");
-const registerUser = require("./routes/registerUser");
-const getUsers = require("./routes/getUsers");
-const userLogin = require("./routes/loginUser");
-const fetchUser = require("./Middleware/fetchUser");
-const connection = require("./db");
 
-const validateUser = require("./Middleware/userValidator");
+const home = require("../routes/home");
+const registerUser = require("../routes/registerUser");
+const getUsers = require("../routes/getUsers");
+const userLogin = require("../routes/loginUser");
+const fetchUser = require("../Middleware/fetchUser");
 
-const PORT = process.env.PORT || 3500;
+const validateUser = require("../Middleware/userValidator");
+const connection = require("../db");
+
+const PORT = Process.env.PORT || 3500;
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -115,7 +116,7 @@ app.get("/SelectedColors", fetchUser.fetchUser, (req, res) => {
 });
 
 app.post("/updateColors", fetchUser.fetchUser, (req, res) => {
-  // console.log(req.user.id, req.body.colors);
+  console.log(req.user.id, req.body.colors);
   const id = req.user.id;
   const colors = req.body.colors;
   try {
